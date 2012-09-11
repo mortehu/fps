@@ -24,7 +24,9 @@ main (int argc, char **argv)
 
   if (0 > (res = av_open_input_file (&input_formatctx, path, 0, 0, 0)))
     {
-      fprintf(stderr, "Failed to open '%s': %s\n", path, av_strerror(res, errbuf, sizeof (errbuf)));
+      av_strerror (res, errbuf, sizeof (errbuf));
+
+      fprintf (stderr, "Failed to open '%s': %s\n", path, errbuf);
       printf ("60\n");
 
       return EXIT_FAILURE;
@@ -32,7 +34,9 @@ main (int argc, char **argv)
 
   if (0 > (res = av_find_stream_info (input_formatctx)))
     {
-      printf("Failed to find stream information in '%s': %s\n", path, av_strerror(res, errbuf, sizeof (errbuf)));
+      av_strerror (res, errbuf, sizeof (errbuf));
+
+      printf ("Failed to find stream information in '%s': %s\n", path, errbuf);
       printf ("60\n");
 
       return EXIT_FAILURE;
