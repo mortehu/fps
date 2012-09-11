@@ -1,0 +1,6 @@
+This program extracts the frame rate of a video using libavformat.  If no frame
+rate can be found, the program outputs "60".
+
+It can be used to set the monitor refresh rate prior to playing a movie:
+
+  xranr -r $(fps "$FILENAME")

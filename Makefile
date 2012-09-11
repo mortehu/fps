@@ -1,0 +1,3 @@
+LDFLAGS=-lavformat
+
+all: fps
