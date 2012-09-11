@@ -22,7 +22,7 @@ main (int argc, char **argv)
 
   av_log_set_level (0);
 
-  if (0 > (res = av_open_input_file (&input_formatctx, path, 0, 0, 0)))
+  if (0 > (res = avformat_open_input (&input_formatctx, path, NULL, NULL)))
     {
       av_strerror (res, errbuf, sizeof (errbuf));
 
@@ -32,7 +32,7 @@ main (int argc, char **argv)
       return EXIT_FAILURE;
     }
 
-  if (0 > (res = av_find_stream_info (input_formatctx)))
+  if (0 > (res = avformat_find_stream_info (input_formatctx, NULL)))
     {
       av_strerror (res, errbuf, sizeof (errbuf));
 
