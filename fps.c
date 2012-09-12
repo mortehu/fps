@@ -36,7 +36,7 @@ main (int argc, char **argv)
     {
       av_strerror (res, errbuf, sizeof (errbuf));
 
-      printf ("Failed to find stream information in '%s': %s\n", path, errbuf);
+      fprintf (stderr, "Failed to find stream information in '%s': %s\n", path, errbuf);
       printf ("60\n");
 
       return EXIT_FAILURE;
