@@ -1,4 +1,4 @@
-LDFLAGS=-lavformat
+LDFLAGS=-lavformat -lavutil -lm
 CFLAGS=-Wall
 
 all: fps
